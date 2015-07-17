@@ -1,0 +1,19 @@
+<div>
+	<p> <a href="#/dashboard">Dashboard</a>  | <a href="#/">Logout</a></p>
+	<h3><span ng-bind="user.name"></span>'S Bucket List</h3>
+	<h4><span ng-bind="user.title"></span></h4>
+	<h5><span ng-bind="user.description"></span></h5>	
+	<div class="row form-group">
+		<label class="col-md-2 control-label">Post your answer here...</label>
+		<textarea class="col-md-4" ng-model="newPost.post"></textarea>
+	</div>
+	<div class="row form-group">
+		<button class="btn btn-success col-md-1 col-md-offset-5" ng-click="createPost(newPost, name)">Post</button>
+	</div>
+	<div class="row form-group">	
+		<div ng-repeat="post in posts">
+			<a href="" ng-bind="post.name"></a>
+			<p ng-bind="post.post"></p>
+		</div>
+	</div>
+</div>

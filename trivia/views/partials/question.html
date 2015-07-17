@@ -1,0 +1,27 @@
+<div>
+	<a href="./">Home</a> | <a href="#/question">Add a Question</a>
+	{{message}}
+	<h1>New Question</h1>
+	<form action="">
+		<p>
+		<label for="question">Question: </label>
+		<input ng-model="questions.question" name="question">
+		</p>
+		<p>
+		<label for="correct">Correct Answer: </label>
+		<input ng-model="questions.correct" name="correct">
+		</p>
+		<p>
+		<label for="fake1">Fake Answer 1: </label>
+		<input ng-model="questions.fake1" name="fake1">
+		</p>
+		<p>
+		<label for="fake2">Fake Answer 2: </label>
+		<input ng-model="questions.fake2" name="fake2">
+		</p>
+		<p>
+		<button href="#/">Cancel</button> 
+		<button ng-click="add()">Add Question</button>
+	</form>
+
+</div>

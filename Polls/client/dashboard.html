@@ -1,0 +1,29 @@
+<p><a href="#/create">Create a New Poll</a>  | <a href="#/">Logout</a></p>
+<h5>Welcome, <span ng-bind="person.name"></span>!</h5>
+<h3>Current Polls </h3>
+<div class="row main">
+
+	<div class="text-right">
+		<input type="text" ng-model="query" placeholder="Search..."> 
+	</div> 
+	<div class="col-xl-12">
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Survey Question</th>
+					<th>Date Posted</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody ng-controller='pollsController'>
+				<tr ng-repeat="poll in polls | filter: query" >
+					<td ng-bind="poll.name"></td>
+					<td><a ng-bind="poll.question" href="#/votes/{{poll._id}}"></a></td>
+					<td><a ng-href="">{{poll.created_at | date:'medium'}}</a></td>
+					<td><a href="#/poll/{{poll._id}}"><button ng-click="remove(poll._id)" ng-show="person.name === poll.name">Remove</button></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

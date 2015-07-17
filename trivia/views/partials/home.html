@@ -1,0 +1,21 @@
+<div>
+	<a href="./">Home</a> | <a href="#/question">Add a Question</a>
+	<div>
+		{{message}}
+		<a href="#/play"><input type="button" value="Play!" ng-click="play()"></a> 
+		<p>Click the button above to start the trivia game</p>
+	</div>
+	<input type="text" name="search" ng-model="search">
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Score</th>
+			<th>Percentage</th>
+		</tr>
+		<tr ng-repeat="score in scores | filter: search | orderBy: 'score.percentage'">
+			<td>{{score.name}}</td>
+			<td>{{score.score}}</td>
+			<td>{{score.percentage}}</td>
+		</tr>
+	</table>
+</div>

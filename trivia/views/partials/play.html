@@ -1,0 +1,15 @@
+<div>
+	<h3>Hi {{name}}!</h3>
+	<p>Choose an answer for each of the questions and submit the test once done.</p>
+	<p>Good luck!</p>
+	<div ng-repeat="question in questions ">
+		<form action="">
+			<p>{{question._id}}{{question.question}}</p>
+			<input type="radio" value="{{question.fake1}}" ng-model="{{question.fake1}}">
+			<input type="radio" value="{{question.correct}}" ng-model="{{question.correct}}">
+			<input type="radio" value="{{question.fake2}}" ng-model="{{question.fake2}}">
+		</form>
+	</div>
+	<a href="/"><input type="button" value="Cancel"></a> 
+	<button ng-click="submit()">Submit</button>
+</div>

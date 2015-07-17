@@ -1,0 +1,13 @@
+<div>
+	<h2>New Appointment</h2>
+	<div>
+		<label class="help-block" for="date">Date</label>
+			<input type="date" name="date" ng-model="apptCtrl.date" required>
+		<label class="help-block" for="time">Time</label>
+			<input type="time" name="time" ng-model="apptCtrl.time" placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required >
+		<label class="help-block" for="complaint"></label>
+			<textarea name="complaint" ng-model="apptCtrl.complaint" cols="30" rows="10" required></textarea>
+	</div>
+	
+	<button ng-click="apptCtrl.addAppointment(apptCtrl)">Add Appointment</button>
+</div>

@@ -1,0 +1,28 @@
+<div>
+	<script>
+		var full_name = window.prompt("Please enter your full_name");
+		
+	</script>
+	<h2>Doctor's Appointments</h2>
+	<label for="search" Search></label>
+	<input type="text" placeholder="Search" ng-model="filter_appointment" >
+	<div>
+		<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Time</th>
+				<th>Patient Name</th>
+				<th>Complaint</th>
+			</tr>
+		</thead>
+		<tr ng-repeat="appointment in dashCtrl.appointments | filter: filter_appointment">
+			<td ng-bind="appointment.date | date:'fullDate'"></td>
+			<td ng-bind="appointment.time | date:'shortTime'"></td>
+			<td ng-bind="appointment.full_name"></td>
+			<td ng-bind="appointment.complaint"> <button ng-show="user.id" ng-click="dashCtrl.cancelAppt(user.id)">Cancel</button></td>
+		</tr>
+		</table>
+	</div>
+	<button><a href="#/appointment">Add New Appointment</a></button>
+</div>

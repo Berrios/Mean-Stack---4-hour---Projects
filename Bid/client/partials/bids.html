@@ -1,0 +1,27 @@
+<div>
+	<h1>Bid Now!</h1>
+	<p><a href="#/login">Logout!</a></p>
+	<div>
+		<table>
+			<tr>
+			<td ng-repeat="product in products">
+				<img src="{{product.productImg}}">
+				<form >
+					<input type="text" ng-model="this.push.bid">
+					<button type="submit" ng-click="newBid(this.push.bid, product.id)">Bid</button>
+				</form>
+				<p>Current Bids</p>
+				<div>
+					<ul>
+						<li ng-repeat="product in products | filter: searchBids | orderBy: product.amount" >
+							{{this.product[id].bids.userName}}, {{product[id].bids.bids.amount}} 
+						</li>
+					</ul>
+				</div>
+				<input ng-model="searchBids" type="text" placeholder="search">
+			</td>
+			</tr>
+		</table>
+	</div>
+	<button>End Bid</button>
+</div>
