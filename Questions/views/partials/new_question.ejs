@@ -1,0 +1,18 @@
+<div>
+	<a href="#/home">Home</a> | <a href="">Add a Question</a>
+	<div>
+		{{message}}
+	</div>
+	<div>
+		<h2>New Question</h2>
+		<form action="">
+			<label for="question">Question: </label>
+				<textarea name="question" ng-model="question" id="" cols="30" rows="10"></textarea>
+			<label for="description">Description (optional): </label>
+				<textarea name="description" ng-model="description" id="" cols="30" rows="10"></textarea>
+			<input type="button" ng-click="cancel()" value="Cancel">
+			<input type="button" ng-click="submit()" value="Submit">
+		</form>
+	</div>
+
+</div>

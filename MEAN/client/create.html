@@ -1,0 +1,20 @@
+<div ng-controller="dashboardController">
+	<h5>New Question </h5>
+	<form class="form-horizontal" data-toggle="validator" role="form" method="post">
+		<div class="help-block with-errors" ng-bind="error"></div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Question: </label>
+			<input type="text" class="col-sm-4" ng-model="questions.question" required>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Description:(optional) </label>
+			<textarea name="" id="" cols="60" rows="5"class="col-sm-4" ng-model="questions.description"></textarea>
+		</div>
+		<div class="form-group"> 
+			<a class="btn btn-success col-md-1" href="#/dashboard">
+				Cancel
+			</a>
+			<button class="btn btn-success col-md-1" ng-click="createQuestion(questions, person)">Submit</button>
+		</div> 
+	</form>
+</div>

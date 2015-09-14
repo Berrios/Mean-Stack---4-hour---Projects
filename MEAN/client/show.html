@@ -1,0 +1,14 @@
+<div>
+	<p> <a href="#/dashboard">Dashboard</a>  | <a href="#/">Logout</a></p>
+	<h1 ng-bind="questions.question"></h1>
+	<h4 ng-bind="questions.description"></h4>
+	<div class="help-block with-errors" ng-bind="error"></div>
+	<div class="form-group" ng-repeat="answer in answers | orderBy:'-likes'" >
+		<label for="" ng-bind="answer.name"></label>
+		<div>
+			<strong ng-bind="answer.heading"></strong>
+			<p  ng-bind="answer.description"></p>
+		</div>
+		<p  ng-bind="answer.likes" ng-model="answer.like"></p><button style="float : right" ng-click="like(answer)" >Like!</button>
+	</div>
+</div>
